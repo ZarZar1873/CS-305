@@ -1,2 +1,24 @@
 # CS-305
 Software Security
+-----------------
+Briefly summarize your client, Artemis Financial, and their software requirements. Who was the client? What issue did they want you to address?
+Artemis Financial is a consulting company that develops individualized financial plans for their customers. These plans include savings, retirements, investments, and insurance. Artemis Financial wanted to modernize their operations and protect their RESTful web API (application programming language) with secure coding techniques.
+-----------------
+What did you do very well when you found your client’s software security vulnerabilities? Why is it important to code securely? What value does software security add to a company’s overall wellbeing?
+I feel that I managed to find and report the vulnerabilities in the code and articulate both what they are and how to fix them very well. It is important to code securely so that the application you develop is safe from attacks. Attackers will use any weak link to break into an application and steal any kind of data they can. This could be personal information, payment info, trade secrets, buisness secrets, patented information, privilaged information, etc. They may also wish to impersonate you to gain such information from your users if you didnt store any information. Keeping your software secure is paramount to any long lasting sucessful buisness. Hacks and data leaks hurt or destroy the lives of users who have their information stolen and it destroys trust between user and company, that mistrust destroys companies.
+-----------------
+What part of the vulnerability assessment was challenging or helpful to you?
+The hardest part of the vulnerability assesment, for me, was the static testing. The dependency checker Maven uses is handy for finding out where there are issues with the dependencies being used but the amount of vulnerabilities is overwhelming and finding out which showcase real problems, which ones don't relate to you, and which ones are false positives is a task I couldn't manage. Thankfully that was not a requirement for the class. I just needed to learn how to supress false positives which I did learn how to do.
+-----------------
+How did you increase layers of security? In the future, what would you use to assess vulnerabilities and decide which mitigation techniques to use?
+I went through the code manually to ensure no known methods of attack existed, like the acceptance of an untrusted String variable directly into the program creating a possible SQL injection attack (found in two places of the base code), as well as doing things like converting the website to HTTPS and using the AES SHA-256 bit encryption algorithm for secure communications. I also made note of the outdated dependencies and recommended those be updated regularly to prevent known vulnerabilities when they are discovered. In the future I would use manual scanning and dependency checking to try and mitigate as many known vulnerabilities as I could. I will also code as securley as I can while I develop in order to prevent attacks in anything I make. 
+-----------------
+How did you make certain the code and software application were functional and secure? After refactoring the code, how did you check to see whether you introduced new vulnerabilities?
+After mitigating all the vulnerabilities that I could and that I had discovered I reran the program and ensured that it was still fully functional. I verified that my self signed certificate was being used by the website and my encryption was being used. To make sure I didn't introduce new vulnerabilities I manualy checked my code and reran the dependency checker to make sure the imports I did did not have any known vulnerabilities.
+-----------------
+What resources, tools, or coding practices did you use that might be helpful in future assignments or tasks?
+A huge resource that I learned about is the maven dependency checker, that will help me make sure the libraries I use are secure, and if they are not what measures I might have to take to mitigate them. I also learned a lot about web based applications and how to create speperate web addresses for sites (like localhost:8443/hash vs localhost:8443).
+-----------------
+Employers sometimes ask for examples of work that you have successfully completed to show your skills, knowledge, and experience. What might you show future employers from this assignment?
+I would show them the vulnerability assessment and the secure software report which showcase my ability to manually search code, run dependency checks, supress false positives, identify security needs, impliment cipher algorithms, read through NIST reports, create certificates and impliment those as a CER file, use HTTPS instead of HTTP, indentify client needs, indentify cipher size needs, and impliment industry best standards.
+-----------------
